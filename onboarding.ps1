@@ -30,6 +30,8 @@ param(
 		[pscustomobject]$UserList
 	)
 
+	## Zorgt ervoor de de System.Web module gebruikt kan worden
+	Add-Type -AssemblyName System.Web
 	## Hier wordt een willekeurig wachtwoord gegenereerd
 	$password = [System.Web.Security.Membership]::GeneratePassword((Get-Random -Minimum 20 -Maximum 32), 3)
 	$secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
