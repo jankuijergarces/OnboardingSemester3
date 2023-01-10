@@ -17,7 +17,7 @@ param(
 
 	Import-Csv -Path $CsvFilePath
  }
- 
+
  function New-CompanyAdUser {
     [CmdletBinding()]
 	param
@@ -51,7 +51,7 @@ param(
  }
  
  ## Dit zorgt ervoor dat de functie van een gebruiker toevoegen wordt uitgevoerd en voor elke 'werknemer' wordt uitgevoerd
- $functions = 'New-CompanyAdUser', 'Test-ADUser'
+ $functions = 'New-CompanyAdUser'
  foreach ($employee in (Read-Employee)) {
      foreach ($function in $functions) {
          & $function -UserList $employee
