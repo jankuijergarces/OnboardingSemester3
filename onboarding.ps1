@@ -6,7 +6,7 @@ param(
  )
 
  ## Deze functie leest alle 'gebruikers' op de lijst en maakt het mogelijk om parameters te kunnen gebruiken
- function Read-Employee {
+ function ReadList {
 	[CmdletBinding()]
 	param
 	(
@@ -18,7 +18,7 @@ param(
 	Import-Csv -Path $CsvFilePath
  }
 
- function New-CompanyAdUser {
+ function NewAdUser {
     [CmdletBinding()]
 	param
 	(
@@ -53,8 +53,8 @@ param(
  }
  
  ## Dit zorgt ervoor dat de functie van een gebruiker toevoegen wordt uitgevoerd en voor elke 'werknemer' wordt uitgevoerd
- $functions = 'New-CompanyAdUser'
- foreach ($employee in (Read-Employee)) {
+ $functions = 'NewAdUser'
+ foreach ($employee in (ReadList)) {
      foreach ($function in $functions) {
          & $function -UserList $employee
      }
