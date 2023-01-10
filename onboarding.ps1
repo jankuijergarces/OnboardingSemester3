@@ -35,7 +35,7 @@ param(
 	$secPw = ConvertTo-SecureString -String $password -AsPlainText -Force
 
 	## Opgegeven naar wordt verkort naar initialen en achternaam
-	$userName = "$($UserList.FirstName.Substring(0,1))$($UserList.LastName))"
+	$userName = "$($UserList.FirstName.Substring(0,1))$($UserList.LastName)"
 
 	## Maakt de gebruiker aan
 	$NewUserParameters = @{
