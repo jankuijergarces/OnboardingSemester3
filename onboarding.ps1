@@ -52,11 +52,11 @@ param(
 	if($?)
 	{
 		Add-AdGroupMember -Identity $UserList.Department -Members $userName
-		"User(s) successfully added"
+		"User successfully added"
 	}
 	else
 	{
-		"Failed to add user(s)"
+		"Failed to add user"
 	}
  }
  
