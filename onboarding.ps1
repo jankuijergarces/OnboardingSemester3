@@ -49,7 +49,15 @@ param(
 	New-AdUser @NewUserParameters
 
 	## Voegt de gebruiker toe aan de groep naar functie
-	Add-AdGroupMember -Identity $UserList.Department -Members $userName
+	if($?)
+	{
+		Add-AdGroupMember -Identity $UserList.Department -Members $userName
+		"User(s) successfully added"
+	}
+	else
+	{
+		"Failed to add user(s)"
+	}
  }
  
  ## Dit zorgt ervoor dat de functie van een gebruiker toevoegen wordt uitgevoerd en voor elke 'werknemer' wordt uitgevoerd
